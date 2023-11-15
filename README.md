@@ -11,10 +11,50 @@
 - **Uso Diario Limitado**: Para mantener la calidad del servicio, limitamos las conversiones diarias. 📆
 
 #### 🛠️ Cómo Empezar
-1. **Instalación**: Clona el repositorio en tu máquina local.
-2. **Configuración**: Configura tu entorno `.env` con las claves de la API necesarias.
-3. **Ejecución**: Inicia tu servidor Laravel y navega a la interfaz del Conversor de Monedas.
-4. **Convierte**: Selecciona tus monedas, ingresa el monto, ¡y listo!
+1. **Instalación**:
+   - Clona el repositorio en tu máquina local:
+     ```
+     git clone [URL_DEL_REPOSITORIO]
+     ```
+   - Navega al directorio del proyecto:
+     ```
+     cd [NOMBRE_DEL_DIRECTORIO]
+     ```
+
+2. **Configuración**:
+   - Instala las dependencias de Composer:
+     ```
+     composer install
+     ```
+   - Configura tu archivo `.env` copiando el ejemplo proporcionado y ajustándolo según tus necesidades:
+     ```
+     cp .env.example .env
+     ```
+     Luego, asegúrate de establecer las claves de la API en el archivo `.env`:
+     ```
+     CURRENCY_LAYER_API_URL=[URL_DE_LA_API]
+     CURRENCY_LAYER_API_KEY=[TU_CLAVE_API]
+     ```
+
+3. **Base de Datos**:
+   - Configura tu conexión de base de datos en el archivo `.env`.
+   - Ejecuta las migraciones para configurar tu base de datos:
+     ```
+     php artisan migrate
+     ```
+
+4. **Ejecución**:
+   - Genera la clave de la aplicación de Laravel:
+     ```
+     php artisan key:generate
+     ```
+   - Inicia el servidor de desarrollo:
+     ```
+     php artisan serve
+     ```
+   - Abre tu navegador y navega a la dirección proporcionada, usualmente `http://localhost:8000`.
+
+
 
 #### 🔧 Requisitos
 - PHP 7.4 o superior.
@@ -31,3 +71,4 @@ El corazón de este proyecto es nuestro controlador `CurrencyConverter`, que man
 #### 📊 Limitaciones y Errores
 - El sistema tiene un límite diario de conversiones para cada usuario.
 - Los errores se manejan de forma clara, informando al usuario sobre cualquier problema.
+
